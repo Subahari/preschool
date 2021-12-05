@@ -46,7 +46,7 @@ class _TeacherState extends State<Teacher> {
           //   onPressed: () {},
           // ),
 
-          title: Text('Teacher'),
+          title: Text('Teachers'),
           centerTitle: true,
           backgroundColor: Colors.teal,
         ),
