@@ -22,11 +22,11 @@ class LandingPage extends StatelessWidget {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        color: Colors.brown,
+        color: Colors.white,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            Image.asset('istockphoto-125143257-612x612.jpg'),
+            Image.asset('home.jpg'),
             Positioned(
               bottom: 300,
               child: MaterialButton(
