@@ -303,7 +303,7 @@ class _LearnState extends State<Learn> {
                     Container(
                       height: 80.0,
                       width: 80.0,
-                      child: Image.asset('assets/clothes.png'),
+                      child: Image.asset('assets/fruit.jpg'),
                     ),
                   ],
                 ),
@@ -349,7 +349,7 @@ class _LearnState extends State<Learn> {
                     Container(
                       height: 80.0,
                       width: 80.0,
-                      child: Image.asset('assets/vehicle.png'),
+                      child: Image.asset('assets/color.jpg'),
                     ),
                   ],
                 ),
@@ -397,7 +397,7 @@ class _LearnState extends State<Learn> {
                     Container(
                       height: 80.0,
                       width: 80.0,
-                      child: Image.asset('assets/orange.png'),
+                      child: Image.asset('assets/poem.jpg'),
                     ),
                   ],
                 ),
