@@ -161,7 +161,7 @@ class _LearnState extends State<Learn> {
                     Container(
                       height: 80.0,
                       width: 80.0,
-                      child: Image.asset('assets/rs=w_1200,h_1200.jfif'),
+                      child: Image.asset('assets/tamil.jpg'),
                     ),
                   ],
                 ),
