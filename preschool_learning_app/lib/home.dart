@@ -22,13 +22,14 @@ class LandingPage extends StatelessWidget {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        color: Colors.white,
+        color: Colors.green,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
             Image.asset('home.jpg'),
             Positioned(
-              bottom: 300,
+              bottom: 240,
+              left: 180,
               child: MaterialButton(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
@@ -62,11 +63,12 @@ class LandingPage extends StatelessWidget {
             ),
             Positioned(
               bottom: 380,
+              left: 220,
               child: MaterialButton(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
-                color: Colors.red,
+                color: Colors.teal[700],
                 padding: EdgeInsets.symmetric(
                   horizontal: 30,
                   vertical: 10,
