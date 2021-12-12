@@ -146,12 +146,12 @@ class _UploadQuizState extends State<UploadQuiz> {
     //player.play('assets/audio/sample.mp3');
     //player.load('sample.mp3');
     return Container(
-      // decoration: BoxDecoration(
-      //   image: DecorationImage(
-      //     image: AssetImage('assets/background.png'),
-      //     fit: BoxFit.cover,
-      //   ),
-      // ),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/Top_new.webp'),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: GridView(
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
