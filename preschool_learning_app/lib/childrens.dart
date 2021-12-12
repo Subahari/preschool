@@ -45,7 +45,7 @@ class _ChildrensState extends State<Childrens> {
               Tab(icon: Icon(Icons.assessment_outlined), text: "Quiz"),
             ],
           ),
-          title: Text('Children_Panel'),
+          title: Text('Children'),
           centerTitle: true,
           backgroundColor: Colors.teal,
         ),
