@@ -279,7 +279,7 @@ class _AssignchildrensIDState extends State<AssignchildrensID> {
                     child: Text(
                       'Assign Children',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.teal,
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
                     )),
@@ -287,8 +287,8 @@ class _AssignchildrensIDState extends State<AssignchildrensID> {
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      'Sign in',
-                      style: TextStyle(fontSize: 20),
+                      'Name & Index No',
+                      style: TextStyle(fontSize: 20, color: Colors.black54),
                     )),
                 Container(
                   padding: EdgeInsets.all(10),
@@ -311,19 +311,19 @@ class _AssignchildrensIDState extends State<AssignchildrensID> {
                     ),
                   ),
                 ),
-                FlatButton(
-                  onPressed: () {
-                    //forgot password screen
-                  },
-                  textColor: Colors.blue,
-                  child: Text('Forgot Password'),
-                ),
+                // FlatButton(
+                //   onPressed: () {
+                //     //forgot password screen
+                //   },
+                //   textColor: Colors.blue,
+                //   child: Text('Forgot Password'),
+                // ),
                 Container(
                     height: 50,
-                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
                     child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.teal,
                       child: Text('Assign'),
                       onPressed: () {
                         print(nameController.text);
