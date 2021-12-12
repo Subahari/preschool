@@ -320,7 +320,7 @@ class _AssignchildrensIDState extends State<AssignchildrensID> {
                 // ),
                 Container(
                     height: 50,
-                    padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                     child: RaisedButton(
                       textColor: Colors.white,
                       color: Colors.teal,
