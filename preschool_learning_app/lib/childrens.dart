@@ -499,7 +499,7 @@ class _TaskState extends State<Task> {
                     Container(
                       height: 80.0,
                       width: 80.0,
-                      child: Image.asset('assets/number.png'),
+                      child: Image.asset('assets/drag-drop-350.png'),
                     ),
                   ],
                 ),
@@ -545,7 +545,7 @@ class _TaskState extends State<Task> {
                     Container(
                       height: 80.0,
                       width: 80.0,
-                      child: Image.asset('assets/clothes.png'),
+                      child: Image.asset('assets/classification.jpg'),
                     ),
                   ],
                 ),
@@ -591,7 +591,7 @@ class _TaskState extends State<Task> {
                     Container(
                       height: 80.0,
                       width: 80.0,
-                      child: Image.asset('assets/vehicle.png'),
+                      child: Image.asset('assets/wordpuzzle.png'),
                     ),
                   ],
                 ),
@@ -639,7 +639,7 @@ class _TaskState extends State<Task> {
                     Container(
                       height: 80.0,
                       width: 80.0,
-                      child: Image.asset('assets/orange.png'),
+                      child: Image.asset('assets/match.jpg'),
                     ),
                   ],
                 ),
@@ -728,7 +728,7 @@ class _QuizState extends State<Quiz> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                        "Video Quiz",
+                        "Image Quiz",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -739,7 +739,7 @@ class _QuizState extends State<Quiz> {
                     Container(
                       height: 80.0,
                       width: 80.0,
-                      child: Image.asset('assets/vehicle.png'),
+                      child: Image.asset('assets/imgquiz.png'),
                     ),
                   ],
                 ),
@@ -767,8 +767,8 @@ class _QuizState extends State<Quiz> {
             child: Padding(
               padding: EdgeInsets.all(23.0),
               child: Container(
-                width: 80.0,
-                height: 80.0,
+                width: 100.0,
+                height: 100.0,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -785,9 +785,9 @@ class _QuizState extends State<Quiz> {
                       ),
                     ),
                     Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/orange.png'),
+                      height: 100.0,
+                      width: 100.0,
+                      child: Image.asset('assets/audio.png'),
                     ),
                   ],
                 ),
