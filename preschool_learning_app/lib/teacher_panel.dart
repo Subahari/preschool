@@ -174,7 +174,7 @@ class _UploadQuizState extends State<UploadQuiz> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                        "Upload Video Quiz",
+                        "Upload Image Quiz",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -183,9 +183,9 @@ class _UploadQuizState extends State<UploadQuiz> {
                       ),
                     ),
                     Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/vehicle.png'),
+                      height: 100.0,
+                      width: 100.0,
+                      child: Image.asset('assets/imgquiz.png'),
                     ),
                   ],
                 ),
@@ -231,9 +231,9 @@ class _UploadQuizState extends State<UploadQuiz> {
                       ),
                     ),
                     Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/orange.png'),
+                      height: 100.0,
+                      width: 100.0,
+                      child: Image.asset('assets/audio.png'),
                     ),
                   ],
                 ),
