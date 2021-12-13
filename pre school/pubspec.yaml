@@ -1,0 +1,77 @@
+name: preschool_learning_app
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  audioplayers: ^0.20.1
+  carousel_slider: ^4.0.0
+  cupertino_icons: ^0.1.3
+  flutter:
+    sdk: flutter
+  flutter_icons: ^1.1.0
+  font_awesome_flutter: ^9.2.0
+  image_picker: ^0.8.4+4
+  sliding_up_panel: ^2.0.0+1
+  tab_indicator_styler: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    # - rs=w_1200,h_1200.jfif
+    # - img1.png
+    # - img2.jpg
+    # - homepage.jpg
+    # - img2.png
+    # - bg.svg
+    # - istockphoto-125143257-612x612.jpg
+    # - istockphoto-168277516-612x612.jpg
+    # - click.mp3
+    # - background.png
+    # - cow.png
+    # - fruits.png
+    # - number.png
+    # - orange.png
+    # - abc.png
+    # - clothes.png
+    # - vehicle.png
+    # - home.jpg
+    # - tamil.jpg
+    # - fruit.jpg
+    # - color.jpg
+    # - poem.jpg
+    # - Learn.jfif
+    # - task.jfif
+    # - quiz.jfif
+    # - drag-drop-350.png
+    # - wordpuzzle.png
+    # - classification1.jpeg
+    # - classification.jpg
+    # - match.jpg
+    # - audio.png
+    # - imgquiz.png
+    # - Top_new.webp
+
+  fonts:
+    - family: Lobster
+      fonts:
+        - asset: assets/Lobster-Regular.ttf
+
+    - family: Pacifico
+      fonts:
+        - asset: assets/Pacifico-Regular.ttf
+
+    - family: ArimaMadurai-Black
+      fonts:
+        - asset: assets/ArimaMadurai-Black.ttf
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
