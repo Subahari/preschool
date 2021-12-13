@@ -5,21 +5,6 @@ import 'teacher_panel.dart';
 //import 'package:audioplayers/audioplayers.dart';
 //import 'package:audioplayers/audio_cache.dart';
 
-void main() => runApp(Children());
-
-class Children extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Childrens_Homepage',
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-      ),
-      home: Childrens(),
-    );
-  }
-}
-
 class Childrens extends StatefulWidget {
   @override
   _ChildrensState createState() => _ChildrensState();

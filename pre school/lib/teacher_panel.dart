@@ -1,22 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:preschool_learning_app/pages/upload_image_quiz.dart';
 import 'home.dart';
 import 'childrens.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Teacher',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Teacher(),
-    );
-  }
-}
 
 class Teacher extends StatefulWidget {
   @override
@@ -159,8 +146,8 @@ class _UploadQuizState extends State<UploadQuiz> {
           GestureDetector(
             onTap: () {
               // audioCache.play('click.mp3');
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => UploadImageQuiz()));
             },
             child: Padding(
               padding: EdgeInsets.all(23.0),
