@@ -31,6 +31,7 @@ class _UploadImageQuizState extends State<UploadImageQuiz> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
+        title: Center(child: Text("Upload Image Question")),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 18),

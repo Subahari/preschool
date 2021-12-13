@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:preschool_learning_app/teacher_panel.dart';
+import 'package:passwordfield/passwordfield.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -28,27 +29,81 @@ class SignInPage extends StatelessWidget {
                   )),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                child: TextFormField(
+                child: TextField(
                   decoration: InputDecoration(
                     suffixIcon: Icon(
                       Icons.person,
-                      color: Colors.grey[400],
+                      color: Colors.blue,
                     ),
-                    hintText: 'User name',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue.shade100,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue.shade100,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide:
+                          BorderSide(width: 2, color: Colors.red.shade200),
+                    ),
+                    hintText: 'User Names',
                   ),
                 ),
+                // TextFormField(
+                //   decoration: InputDecoration(
+                //     suffixIcon: Icon(
+                //       Icons.person,
+                //       color: Colors.grey[400],
+                //     ),
+                //     hintText: 'User name',
+                //   ),
+                // ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    suffixIcon: Icon(
-                      Icons.lock,
-                      color: Colors.grey[400],
+                child: PasswordField(
+                  color: Colors.blue,
+                  passwordConstraint: r'.*[@$#.*].*',
+                  inputDecoration: PasswordDecoration(),
+                  hintText: 'Password',
+                  border: PasswordBorder(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue.shade100,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                    hintText: 'Password',
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue.shade100,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide:
+                          BorderSide(width: 2, color: Colors.red.shade200),
+                    ),
                   ),
+                  errorMessage:
+                      'must contain special character either . * @ # \$',
                 ),
+
+                // TextFormField(
+                //   decoration: InputDecoration(
+                //     suffixIcon: Icon(
+                //       Icons.lock,
+                //       color: Colors.grey[400],
+                //     ),
+                //     hintText: 'Password',
+                //   ),
+                // ),
               ),
               SizedBox(
                 height: 20,
