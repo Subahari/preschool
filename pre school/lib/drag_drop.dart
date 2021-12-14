@@ -3,6 +3,7 @@ import 'package:audioplayers/audioplayers.dart';
 //import 'package:audioplayers/audio_cache.dart';
 import 'childrens.dart';
 import 'colordrag.dart';
+import 'symbols.dart';
 
 class drag extends StatelessWidget {
   @override
@@ -56,7 +57,7 @@ class _dragsState extends State<drags> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/Learn.jfif'),
+          image: AssetImage('assets/drag.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -80,7 +81,7 @@ class _dragsState extends State<drags> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
+                      padding: EdgeInsets.symmetric(vertical: 20.0),
                       child: Text(
                         "நிறங்கள்",
                         style: TextStyle(
@@ -236,6 +237,55 @@ class _dragsState extends State<drags> {
                       height: 80.0,
                       width: 80.0,
                       child: Image.asset('assets/fruit.jpg'),
+                    ),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(2, 1),
+                        blurRadius: 10.0,
+                      ),
+                    ]),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              //Symbols
+              // audioCache.play('click.mp3');
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Symbols()));
+            },
+            child: Padding(
+              padding: EdgeInsets.all(23.0),
+              child: Container(
+                width: 80.0,
+                height: 70.0,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10.0),
+                      child: Center(
+                        child: Text(
+                          "Symbols",
+                          style: TextStyle(
+                              fontSize: 15.0,
+                              fontFamily: 'Comic',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.brown),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 80.0,
+                      width: 80.0,
+                      child: Image.asset('assets/abc.png'),
                     ),
                   ],
                 ),
