@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'teacher_panel.dart';
-//import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'drag_drop.dart';
 //import 'package:audioplayers/audio_cache.dart';
 
 class Childrens extends StatefulWidget {
@@ -75,7 +76,7 @@ class Learn extends StatefulWidget {
   _LearnState createState() => _LearnState();
 }
 
-//AudioPlayer audioPlayer = AudioPlayer(mode: PlayerMode.LOW_LATENCY);
+AudioPlayer audioPlayer = AudioPlayer(mode: PlayerMode.LOW_LATENCY);
 
 //https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 
@@ -458,7 +459,7 @@ class _TaskState extends State<Task> {
               //audioCache.play('click.mp3');
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Home()),
+                MaterialPageRoute(builder: (context) => drag()),
               );
             },
             child: Padding(
