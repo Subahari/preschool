@@ -4,6 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'childrens.dart';
 import 'colordrag.dart';
 import 'symbols.dart';
+import 'animal.dart';
 
 class drag extends StatelessWidget {
   @override
@@ -115,7 +116,7 @@ class _dragsState extends State<drags> {
             onTap: () {
               // audioCache.play('click.mp3');
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Task()));
+                  context, MaterialPageRoute(builder: (context) => animal()));
             },
             child: Padding(
               padding: EdgeInsets.all(23.0),
