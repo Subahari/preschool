@@ -35,7 +35,7 @@ flutter:
     - assets/Fruits/ 
     - assets/number/
     - assets/tamil/
-    - assets/alphabet/audio
+    - assets/alphabet/audio/
 
     # - rs=w_1200,h_1200.jfif
     # - img1.png
