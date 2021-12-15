@@ -4,6 +4,8 @@ import 'home.dart';
 import 'teacher_panel.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'drag_drop.dart';
+import 'learnnumber.dart';
+import 'learnalphabets.dart';
 //import 'package:audioplayers/audio_cache.dart';
 
 class Childrens extends StatefulWidget {
@@ -167,8 +169,8 @@ class _LearnState extends State<Learn> {
           GestureDetector(
             onTap: () {
               // audioCache.play('click.mp3');
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => learnalphabet()));
             },
             child: Padding(
               padding: EdgeInsets.all(23.0),
@@ -217,7 +219,7 @@ class _LearnState extends State<Learn> {
               //audioCache.play('click.mp3');
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Home()),
+                MaterialPageRoute(builder: (context) => learnnumber()),
               );
             },
             child: Padding(
