@@ -37,6 +37,7 @@ flutter:
     - assets/tamil/
     - assets/alphabet/audio/
     - assets/alphabet/capital/
+    - assets/tamil/tamil letter/
 
     # - rs=w_1200,h_1200.jfif
     # - img1.png

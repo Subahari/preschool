@@ -7,7 +7,7 @@ class learnalphabet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('ENGLISH ALPHABET')),
+        title: Center(child: const Text('ENGLISH ALPHABETS')),
         backgroundColor: Colors.teal[700],
       ),
       body: learnalphabets(),

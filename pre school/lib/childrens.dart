@@ -6,6 +6,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'drag_drop.dart';
 import 'learnnumber.dart';
 import 'learnalphabets.dart';
+import 'learntamilalphabets.dart';
 //import 'package:audioplayers/audio_cache.dart';
 
 class Childrens extends StatefulWidget {
@@ -112,7 +113,7 @@ class _LearnState extends State<Learn> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/Learn.jfif'),
+          image: AssetImage('assets/bg.jfif'),
           fit: BoxFit.cover,
         ),
       ),
@@ -123,8 +124,8 @@ class _LearnState extends State<Learn> {
           GestureDetector(
             onTap: () {
               //audioCache.play('click.mp3');
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => learntamil()));
             },
             child: Padding(
               padding: EdgeInsets.all(23.0),
