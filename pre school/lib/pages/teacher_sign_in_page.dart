@@ -8,6 +8,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
+          // constraints: BoxConstraints(minHeight: 900),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           color: Colors.yellow[100],

@@ -13,6 +13,14 @@ class drag extends StatelessWidget {
       appBar: AppBar(
         title: Center(child: const Text('Drag & Drop Learn')),
         backgroundColor: Colors.teal[700],
+        leading: BackButton(
+          onPressed: () => Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Childrens(),
+              ),
+              (route) => false),
+        ),
       ),
       body: drags(),
     );
@@ -33,7 +41,7 @@ class _dragsState extends State<drags> {
   //AudioCache audioCache;
   //initiate the Playing
 
-  @override
+  // @override
   // void initState() {
   //   // TODO: implement initState
   //   super.initState();

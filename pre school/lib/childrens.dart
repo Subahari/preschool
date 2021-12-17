@@ -117,7 +117,64 @@ class _LearnState extends State<Learn> {
           fit: BoxFit.cover,
         ),
       ),
-      child: GridView(
+      child:
+
+          /*  GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
+        itemCount: list.length,
+        itemBuilder: (BuildContext context, int index) {
+          final instant = list[index];
+
+          return  GestureDetector(
+            onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => learntamil(),),),
+            child: Padding(
+              padding: EdgeInsets.all(23.0),
+              child: Container(
+                width: 80.0,
+                height: 70.0,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10.0),
+                      child: Text(
+                        "${instant.title}",
+                        textAlign:TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 15.0,
+                            fontFamily: 'Comic',
+                            fontWeight: FontWeight.w600,
+                            color: Colors.brown),
+                      ),
+                    ),
+                    Container(
+                      height: 80.0,
+                      width: 80.0,
+                      child: Image.asset(instant.image,errorBuilder: (_,__,___)=>Text('Image loading failed'),),
+                    ),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(2, 1),
+                        blurRadius: 10.0,
+                      ),
+                    ]),
+              ),
+            ),
+          );
+        },
+      ), */
+
+          GridView(
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         children: <Widget>[
@@ -168,11 +225,12 @@ class _LearnState extends State<Learn> {
             ),
           ),
           GestureDetector(
-            onTap: () {
-              // audioCache.play('click.mp3');
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => learnalphabet()));
-            },
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => learnalphabet(),
+              ),
+            ),
             child: Padding(
               padding: EdgeInsets.all(23.0),
               child: Container(
@@ -187,6 +245,7 @@ class _LearnState extends State<Learn> {
                       child: Center(
                         child: Text(
                           "ஆங்கில எழுத்துக்கள்",
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 15.0,
                               fontFamily: 'Comic',

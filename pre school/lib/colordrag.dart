@@ -14,6 +14,7 @@ class ColordragState extends State<Colordrag> {
   final Map<String, bool> score = {};
 
   /// Choices for game
+  /// //https://emojipedia.org/food-drink/
   final Map choices = {
     '🍏': Colors.green,
     '🍎': Colors.red,
@@ -36,19 +37,10 @@ class ColordragState extends State<Colordrag> {
       appBar: AppBar(
         backgroundColor: Colors.teal[700],
         centerTitle: true,
-        title: Row(mainAxisSize: MainAxisSize.min, children: [
-          IconButton(
-            icon: Icon(Icons.home),
-            onPressed: () => Navigator.pop(context),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Text(
-            "Color Drag & Drop ",
-            style: TextStyle(color: Colors.white),
-          ),
-        ]),
+        title: Text(
+          "Color Drag & Drop ",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -221,14 +213,20 @@ dialogue(BuildContext context) {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Center(child: Image.asset("assets/success.gif")),
-                FlatButton(
-                    color: Colors.teal[700],
+                TextButton(
+                    style: TextButton.styleFrom(
+                      primary: Colors.teal[700],
+                    ),
                     child: Text("Next Game"),
                     onPressed: () {
                       // Navigator.pop(context);
                       // Navigator.pop(context);
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => drag()));
+                      // Navigator.push(context,
+                      //     MaterialPageRoute(builder: (context) => drag()));
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => drag()),
+                          (route) => false);
                     })
               ],
             ),
