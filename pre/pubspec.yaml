@@ -20,6 +20,7 @@ dependencies:
   sliding_up_panel: ^2.0.0+1
   tab_indicator_styler: ^2.0.0
   just_audio: ^0.9.18
+  math_expressions: ^2.2.0
 
 dev_dependencies:
   flutter_test:

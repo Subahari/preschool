@@ -42,6 +42,7 @@ class _SplashState extends State<Splash> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Image.asset("assets/logo.jpg"),
             Text(
               "PreSchool",
               style: TextStyle(

@@ -4,7 +4,6 @@ import 'childrens.dart';
 import 'teacher_panel.dart';
 //import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,14 +20,19 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        // width: MediaQuery.of(context).size.width,
+
         // color: Colors.green,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment:CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           // alignment: Alignment.center,
           children: <Widget>[
-            Image.asset('assets/home.jpg'),
+            Image.asset(
+              "assets/10212.jpg",
+            ),
+
+            // Image.asset('assets/home.jpg'),
             // Positioned(
             //   bottom: 240,
             //   left: 180,
@@ -36,6 +40,74 @@ class LandingPage extends StatelessWidget {
             Wrap(
               alignment: WrapAlignment.spaceEvenly,
               children: [
+                SizedBox(
+                  width: 5,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      suffixIcon: Icon(
+                        Icons.person,
+                        color: Colors.blue,
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue.shade100,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue.shade100,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide:
+                            BorderSide(width: 2, color: Colors.red.shade200),
+                      ),
+                      hintText: 'User Names',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      suffixIcon: Icon(
+                        Icons.person,
+                        color: Colors.blue,
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue.shade100,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue.shade100,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide:
+                            BorderSide(width: 2, color: Colors.red.shade200),
+                      ),
+                      hintText: 'Index',
+                    ),
+                  ),
+                ),
+                // TextField(
+                //   decoration: const InputDecoration(
+                //       border: OutlineInputBorder(),
+                //       hintText: 'Enter a name',
+                //       contentPadding:
+                //           const EdgeInsets.symmetric(horizontal: 40.0)),
+                // ),
                 MaterialButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -96,6 +168,7 @@ class LandingPage extends StatelessWidget {
                 // )
               ],
             ),
+            Image.asset("assets/preschool-chool.jpg")
           ],
         ),
       ),
