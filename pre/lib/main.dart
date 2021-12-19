@@ -36,27 +36,27 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
+      backgroundColor: Colors.white,
 
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Image.asset("assets/logo.jpg"),
-            Text(
-              "PreSchool",
-              style: TextStyle(
-                  fontSize: 35,
-                  color: Colors.tealAccent,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Pacifico"),
-            ),
-            Text("Learning",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "Lobster"))
+            Image.asset("assets/home logo.jpg"),
+            // Text(
+            //   "PreSchool",
+            //   style: TextStyle(
+            //       fontSize: 35,
+            //       color: Colors.tealAccent,
+            //       fontWeight: FontWeight.bold,
+            //       fontFamily: "Pacifico"),
+            // ),
+            // Text("Learning",
+            //     style: TextStyle(
+            //         color: Colors.white,
+            //         fontSize: 20,
+            //         fontWeight: FontWeight.bold,
+            //         fontFamily: "Lobster"))
           ],
         ),
       ), //center
