@@ -11,6 +11,7 @@ dependencies:
   carousel_slider: ^4.0.0
   cupertino_icons: ^0.1.3
   passwordfield: ^0.1.0
+  flushbar: ^1.10.4
 
   flutter:
     sdk: flutter
@@ -21,6 +22,7 @@ dependencies:
   tab_indicator_styler: ^2.0.0
   just_audio: ^0.9.18
   math_expressions: ^2.2.0
+ 
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +40,12 @@ flutter:
     - assets/alphabet/audio/
     - assets/alphabet/capital/
     - assets/tamil/tamil letter/
+    - assets/Classify/
+    - assets/tamil/audio/
+    - assets/Colours/
+    - assets/Colours/audio/
+    - assets/Fruits/audio/
+    - assets/number/audio/
     # - rs=w_1200,h_1200.jfif
     # - img1.png
     # - img2.jpg

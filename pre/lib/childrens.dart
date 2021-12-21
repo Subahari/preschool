@@ -1,14 +1,14 @@
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:preschool_learning_app/constants/e_alphabet_lists.dart';
 import 'home.dart';
-import 'teacher_panel.dart';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'drag_drop.dart';
-import 'learnnumber.dart';
+
 import 'learnalphabets.dart';
-import 'learntamilalphabets.dart';
-//import 'package:audioplayers/audio_cache.dart';
+
+import 'draggable_advanced_page.dart';
 
 class Childrens extends StatefulWidget {
   @override
@@ -180,11 +180,20 @@ class _LearnState extends State<Learn> {
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         children: <Widget>[
           GestureDetector(
-            onTap: () {
-              //audioCache.play('click.mp3');
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => learntamil()));
-            },
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => learnalphabet(
+                  title: 'TAMIL ALPHABETS',
+                  list: EAlphabetLists.TamilAlphabets,
+                ),
+              ),
+            ),
+            // onTap: () {
+            //   //audioCache.play('click.mp3');
+            //   Navigator.push(
+            //       context, MaterialPageRoute(builder: (context) => Home()));
+            // },
             child: Padding(
               padding: EdgeInsets.all(23.0),
               child: Container(
@@ -283,7 +292,11 @@ class _LearnState extends State<Learn> {
               //audioCache.play('click.mp3');
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => learnnumber()),
+                MaterialPageRoute(
+                    builder: (context) => learnalphabet(
+                          title: 'NUMBERS',
+                          list: EAlphabetLists.Numbers,
+                        )),
               );
             },
             child: Padding(
@@ -380,7 +393,12 @@ class _LearnState extends State<Learn> {
             onTap: () {
               // audioCache.play('click.mp3');
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => learnalphabet(
+                            title: 'Colors',
+                            list: EAlphabetLists.Colors,
+                          )));
             },
             child: Padding(
               padding: EdgeInsets.all(23.0),
@@ -576,7 +594,9 @@ class _TaskState extends State<Task> {
             onTap: () {
               //audioCache.play('click.mp3');
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DraggableAdvancedPage()));
             },
             child: Padding(
               padding: EdgeInsets.all(23.0),
