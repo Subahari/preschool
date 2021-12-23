@@ -4,7 +4,6 @@ import 'package:preschool_learning_app/pages/upload_image_quiz.dart';
 import 'home.dart';
 import 'childrens.dart';
 
-
 class Teacher extends StatefulWidget {
   @override
   _TeacherState createState() => _TeacherState();
@@ -169,11 +168,13 @@ class _UploadQuizState extends State<UploadQuiz> {
                             color: Colors.brown),
                       ),
                     ),
-                    Container(
-                      height: 100.0,
-                      width: 100.0,
-                      child: Image.asset('assets/imgquiz.png'),
-                    ),
+                    Expanded(
+                      child: Container(
+                        height: 100.0,
+                        width: 100.0,
+                        child: Image.asset('assets/imgquiz.png'),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(
@@ -217,11 +218,13 @@ class _UploadQuizState extends State<UploadQuiz> {
                             color: Colors.brown),
                       ),
                     ),
-                    Container(
-                      height: 100.0,
-                      width: 100.0,
-                      child: Image.asset('assets/audio.png'),
-                    ),
+                    Expanded(
+                      child: Container(
+                        height: 100.0,
+                        width: 100.0,
+                        child: Image.asset('assets/audio.png'),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(

@@ -108,6 +108,7 @@ class LandingPage extends StatelessWidget {
                 //       contentPadding:
                 //           const EdgeInsets.symmetric(horizontal: 40.0)),
                 // ),
+
                 MaterialButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -143,6 +144,7 @@ class LandingPage extends StatelessWidget {
                 //   bottom: 380,
                 //   left: 220,
                 //   child:
+
                 MaterialButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -168,7 +170,7 @@ class LandingPage extends StatelessWidget {
                 // )
               ],
             ),
-            Image.asset("assets/preschool-chool.jpg")
+            Expanded(child: Image.asset("assets/preschool-chool.jpg"))
           ],
         ),
       ),

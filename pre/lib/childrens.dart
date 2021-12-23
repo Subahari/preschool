@@ -214,11 +214,13 @@ class _LearnState extends State<Learn> {
                             color: Colors.brown),
                       ),
                     ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/tamil.jpg'),
-                    ),
+                    Expanded(
+                      child: Container(
+                        height: 80.0,
+                        width: 80.0,
+                        child: Image.asset('assets/tamil.jpg'),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(
@@ -267,11 +269,13 @@ class _LearnState extends State<Learn> {
                         ),
                       ),
                     ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/abc.png'),
-                    ),
+                    Expanded(
+                      child: Container(
+                        height: 80.0,
+                        width: 80.0,
+                        child: Image.asset('assets/abc.png'),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(
@@ -618,11 +622,13 @@ class _TaskState extends State<Task> {
                             color: Colors.brown),
                       ),
                     ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/classification.jpg'),
-                    ),
+                    Expanded(
+                      child: Container(
+                        height: 80.0,
+                        width: 80.0,
+                        child: Image.asset('assets/classification.jpg'),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(
@@ -712,11 +718,13 @@ class _TaskState extends State<Task> {
                             color: Colors.brown),
                       ),
                     ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/match.jpg'),
-                    ),
+                    Expanded(
+                      child: Container(
+                        height: 80.0,
+                        width: 80.0,
+                        child: Image.asset('assets/match.jpg'),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(
@@ -860,11 +868,13 @@ class _QuizState extends State<Quiz> {
                             color: Colors.brown),
                       ),
                     ),
-                    Container(
-                      height: 100.0,
-                      width: 100.0,
-                      child: Image.asset('assets/audio.png'),
-                    ),
+                    Expanded(
+                      child: Container(
+                        height: 100.0,
+                        width: 100.0,
+                        child: Image.asset('assets/audio.png'),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(
