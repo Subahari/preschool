@@ -68,7 +68,7 @@ class LandingPage extends StatelessWidget {
                         borderSide:
                             BorderSide(width: 2, color: Colors.red.shade200),
                       ),
-                      hintText: 'User Names',
+                      hintText: 'User Name',
                     ),
                   ),
                 ),
@@ -77,7 +77,7 @@ class LandingPage extends StatelessWidget {
                   child: TextField(
                     decoration: InputDecoration(
                       suffixIcon: Icon(
-                        Icons.person,
+                        Icons.lock,
                         color: Colors.blue,
                       ),
                       border: OutlineInputBorder(
@@ -97,7 +97,7 @@ class LandingPage extends StatelessWidget {
                         borderSide:
                             BorderSide(width: 2, color: Colors.red.shade200),
                       ),
-                      hintText: 'Index',
+                      hintText: 'Password',
                     ),
                   ),
                 ),
