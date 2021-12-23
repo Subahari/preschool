@@ -206,7 +206,7 @@ class _LearnState extends State<Learn> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                        "தமிழ் எழுத்துக்கள்",
+                        "Tamil Alphabets",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -259,7 +259,7 @@ class _LearnState extends State<Learn> {
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Center(
                         child: Text(
-                          "ஆங்கில எழுத்துக்கள்",
+                          "English Alphabets",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 15.0,
@@ -315,7 +315,7 @@ class _LearnState extends State<Learn> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                        "எண்கள்",
+                        "Numbers",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -365,7 +365,7 @@ class _LearnState extends State<Learn> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                        "பழங்கள்",
+                        "Fruits",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -416,7 +416,7 @@ class _LearnState extends State<Learn> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                        "நிறங்கள்",
+                        "Colors",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -464,7 +464,7 @@ class _LearnState extends State<Learn> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                        "கவிதைகள்",
+                        "Poem/Rhymes",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -613,13 +613,15 @@ class _TaskState extends State<Task> {
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        "Classify the given set elements",
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontFamily: 'Comic',
-                            fontWeight: FontWeight.w600,
-                            color: Colors.brown),
+                      child: Center(
+                        child: Text(
+                          "Classify the given set elements",
+                          style: TextStyle(
+                              fontSize: 15.0,
+                              fontFamily: 'Comic',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.brown),
+                        ),
                       ),
                     ),
                     Expanded(
@@ -709,13 +711,15 @@ class _TaskState extends State<Task> {
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        "Match with correct solution",
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontFamily: 'Comic',
-                            fontWeight: FontWeight.w600,
-                            color: Colors.brown),
+                      child: Center(
+                        child: Text(
+                          "Match with correct solution",
+                          style: TextStyle(
+                              fontSize: 15.0,
+                              fontFamily: 'Comic',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.brown),
+                        ),
                       ),
                     ),
                     Expanded(

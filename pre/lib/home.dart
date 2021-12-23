@@ -118,12 +118,6 @@ class LandingPage extends StatelessWidget {
                     horizontal: 30,
                     vertical: 10,
                   ),
-
-                  // leading: IconButton(
-                  //   icon: Icon(Icons.menu),
-                  //   onPressed: () {},
-                  // ),
-
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -131,7 +125,7 @@ class LandingPage extends StatelessWidget {
                     );
                   },
                   child: Text(
-                    'மாணவர்கள்',
+                    'Children',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -144,29 +138,33 @@ class LandingPage extends StatelessWidget {
                 //   bottom: 380,
                 //   left: 220,
                 //   child:
-
-                MaterialButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  color: Colors.teal[700],
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 30,
-                    vertical: 10,
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignInPage()));
-                  },
-                  child: Text(
-                    'ஆசிரியர்',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                Expanded(
+                  child: MaterialButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    color: Colors.teal[700],
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 10,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignInPage()));
+                    },
+                    child: Text(
+                      'Teacher',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
                     ),
                   ),
-                ),
+                )
+
                 // )
               ],
             ),
