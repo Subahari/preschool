@@ -14,7 +14,7 @@ class drag extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Drag & Drop Learn')),
+        title: Center(child: const Text('DRAG & DROP LEARN')),
         backgroundColor: Colors.pink[300],
         leading: BackButton(
           onPressed: () => Navigator.pushAndRemoveUntil(
