@@ -1,10 +1,8 @@
 import 'data.dart';
-
+import 'main.dart';
 import 'utils.dart';
 import 'draggable_widget.dart';
 import 'package:flutter/material.dart';
-//import 'package:draggable_example/main.dart';
-//import 'package:draggable_example/utils.dart';
 
 class DraggableAdvancedPage extends StatefulWidget {
   @override
@@ -15,6 +13,8 @@ class _DraggableAdvancedPageState extends State<DraggableAdvancedPage> {
   final List<Animal> all = allAnimals;
   final List<Animal> land = [];
   final List<Animal> air = [];
+  final List<Animal> fruits = [];
+  final List<Animal> number = [];
 
   final double size = 150;
 
@@ -22,13 +22,16 @@ class _DraggableAdvancedPageState extends State<DraggableAdvancedPage> {
     all.removeWhere((animal) => animal.imageUrl == toRemove.imageUrl);
     land.removeWhere((animal) => animal.imageUrl == toRemove.imageUrl);
     air.removeWhere((animal) => animal.imageUrl == toRemove.imageUrl);
+    fruits.removeWhere((animal) => animal.imageUrl == toRemove.imageUrl);
+    number.removeWhere((animal) => animal.imageUrl == toRemove.imageUrl);
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('Classify the given set'),
+          title: Text('Classify the given set of elements'),
           centerTitle: true,
+          backgroundColor: Colors.pink[300],
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -64,6 +67,41 @@ class _DraggableAdvancedPageState extends State<DraggableAdvancedPage> {
                   onAccept: (data) => setState(() {
                     removeAll(data);
                     air.add(data);
+                  }),
+                ),
+                // buildTarget(
+                //   context,
+                //   text: 'Fruits',
+                //   animals: air,
+                //   acceptTypes: [AnimalType.air],
+                //   onAccept: (data) => setState(() {
+                //     removeAll(data);
+                //     air.add(data);
+                //   }),
+                // ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                buildTarget(
+                  context,
+                  text: 'Fruits',
+                  animals: fruits,
+                  acceptTypes: [AnimalType.fruits],
+                  onAccept: (data) => setState(() {
+                    removeAll(data);
+                    fruits.add(data);
+                  }),
+                ),
+                buildTarget(
+                  context,
+                  text: 'Number',
+                  animals: number,
+                  acceptTypes: [AnimalType.number],
+                  onAccept: (data) => setState(() {
+                    removeAll(data);
+                    number.add(data);
                   }),
                 ),
               ],

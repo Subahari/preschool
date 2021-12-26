@@ -9,6 +9,7 @@ import 'drag_drop.dart';
 import 'learnalphabets.dart';
 
 import 'draggable_advanced_page.dart';
+import 'classify_given_set.dart';
 
 class Childrens extends StatefulWidget {
   @override
@@ -23,6 +24,11 @@ class _ChildrensState extends State<Childrens> {
       child: Scaffold(
         appBar: AppBar(
           bottom: TabBar(
+            //indicatorColor: Colors.deepPurple,
+            // indicatorSize: TabBarIndicatorSize.label,
+            indicator: BoxDecoration(
+                borderRadius: BorderRadius.circular(50), // Creates border
+                color: Colors.pink),
             tabs: [
               Tab(
                 icon: Icon(Icons.book),
@@ -37,36 +43,13 @@ class _ChildrensState extends State<Childrens> {
           ),
           title: Text('Children'),
           centerTitle: true,
-          backgroundColor: Colors.teal,
+          backgroundColor: Colors.pink[300],
         ),
-        // body: TabBarView(
-        //   children: [
-        //     Center(
-        //       child: Text("Page 10")
-        //       ),
-        //     Center(child: Text("Page 20")),
-        //     Center(child: Text("Page 3")),
-        //   ],
-        // ),
         body: TabBarView(
           children: <Widget>[
-            //NewRecipe(),
-            //SignInPage(),
-            Learn(), Task(), Quiz(),
-            // Container(
-            //   child: Center(
-            //     child: Text(
-            //       'Tasks sections',
-            //     ),
-            //   ),
-            // ),
-            // Container(
-            //   child: Center(
-            //     child: Text(
-            //       'Quiz Sections',
-            //     ),
-            //   ),
-            // ),
+            Learn(),
+            Task(),
+            Quiz(),
           ],
         ),
       ),
@@ -85,36 +68,12 @@ AudioPlayer audioPlayer = AudioPlayer(mode: PlayerMode.LOW_LATENCY);
 //https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 
 class _LearnState extends State<Learn> {
-  //AudioPlayer advancePlayer;
-  //AudioCache audioCache;
-  //initiate the Playing
-
-  @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   initPlayer();
-  // }
-
-  // void initPlayer() {
-  //  // advancePlayer = AudioPlayer();
-  //   audioCache = AudioCache(fixedPlayer: advancePlayer);
-
-  //   advancePlayer.durationHandler = (d) => setState(() {});
-  // }
-
-  String localFilePath;
-
   @override
   Widget build(BuildContext context) {
-    //final player = AudioCache();
-    // AudioCache player = AudioCache(prefix: 'audio/');
-    //player.play('assets/audio/sample.mp3');
-    //player.load('sample.mp3');
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/bg.jfif'),
+          image: AssetImage('assets/d0ba8f17649800d406496d6a4b90117a.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -348,7 +307,7 @@ class _LearnState extends State<Learn> {
               context,
               MaterialPageRoute(
                 builder: (context) => learnalphabet(
-                  title: 'Fruits',
+                  title: 'FRUITS',
                   list: EAlphabetLists.fruits,
                 ),
               ),
@@ -400,7 +359,7 @@ class _LearnState extends State<Learn> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => learnalphabet(
-                            title: 'Colors',
+                            title: 'COLORS',
                             list: EAlphabetLists.Colors,
                           )));
             },
@@ -538,7 +497,7 @@ class _TaskState extends State<Task> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/task.jfif'),
+          image: AssetImage('assets/task.jpg'),
           fit: BoxFit.cover,
         ),
       ),

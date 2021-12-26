@@ -16,7 +16,7 @@ class learnalphabet extends StatelessWidget {
       appBar: AppBar(
         title: Text('$title'),
         centerTitle: true,
-        backgroundColor: Colors.teal[700],
+        backgroundColor: Colors.pink[300],
       ),
       body: learnalphabets(
         list: list,
@@ -47,7 +47,7 @@ class _learnalphabetsState extends State<learnalphabets> {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'assets/bg.jfif',
+            'assets/bgback.webp',
             fit: BoxFit.fitHeight,
           ),
           Column(
@@ -88,8 +88,8 @@ class _learnalphabetsState extends State<learnalphabets> {
                             IconButton(
                               icon: Icon(
                                 FontAwesome.volume_up,
-                                size: 38,
-                                color: Colors.white,
+                                size: 50,
+                                color: Colors.black,
                               ),
                               onPressed: () =>
                                   AudioService.playAudio(_assetPath),
@@ -111,7 +111,8 @@ class _learnalphabetsState extends State<learnalphabets> {
                 IconButton(
                   icon: Icon(
                     Icons.arrow_back_ios_new_rounded,
-                    color: Colors.white,
+                    color: Colors.black,
+                    size: 60,
                   ),
                   onPressed: () => controller.previousPage(),
                 ),
@@ -125,7 +126,8 @@ class _learnalphabetsState extends State<learnalphabets> {
                 IconButton(
                   icon: Icon(
                     Icons.arrow_forward_ios_outlined,
-                    color: Colors.white,
+                    color: Colors.black,
+                    size: 60,
                   ),
                   onPressed: () => controller.nextPage(),
                 ),

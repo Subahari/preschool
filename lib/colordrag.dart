@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'drag_drop.dart';
 //import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Colordrag extends StatefulWidget {
   Colordrag({Key key}) : super(key: key);
@@ -22,20 +23,20 @@ class ColordragState extends State<Colordrag> {
     '🍇': Colors.purple,
     '🍌': Colors.yellow,
     '🥥': Colors.brown,
-    '🍄': Colors.pinkAccent,
-    '🥒': Colors.green,
-    '🍋': Colors.yellowAccent,
-    '🍆': Colors.purpleAccent,
+    '🌸': Colors.pink[200],
+    '🐋': Colors.blue,
+    '♟️': Colors.black,
+    '🥛': Colors.white,
   };
   int seed = 0;
-  //AudioCache _audioCache = AudioCache();
+  AudioCache _audioCache = AudioCache();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     height = height - 200;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal[700],
+        backgroundColor: Colors.pink[300],
         centerTitle: true,
         title: Text(
           "Color Drag & Drop ",
@@ -48,10 +49,10 @@ class ColordragState extends State<Colordrag> {
             SizedBox(
               height: 10,
             ),
-            Text(
-              "Match The Fruit With the Color",
-              style: TextStyle(fontSize: 20, color: Colors.black),
-            ),
+            // Text(
+            //   "Match Emojis With the Color",
+            //   style: TextStyle(fontSize: 20, color: Colors.black),
+            // ),
             SizedBox(
               height: 5,
             ),
@@ -60,13 +61,18 @@ class ColordragState extends State<Colordrag> {
               children: [
                 Text(
                   "Score: ",
-                  style: TextStyle(
-                      fontFamily: "Pacifico", fontSize: 20, color: Colors.teal),
+                  // style: TextStyle(
+                  //     fontFamily: "Pacifico", fontSize: 20, color: Colors.teal),
+                  style: Theme.of(context).textTheme.subtitle1,
                 ),
                 Text(
                   "${score.length}",
-                  style: TextStyle(
-                      fontFamily: "Lobster", fontSize: 35, color: Colors.red),
+                  // style: TextStyle(
+                  //     fontFamily: "Lobster", fontSize: 35, color: Colors.red),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline2
+                      .copyWith(color: Colors.teal),
                 ),
                 Text(
                   " /10",
@@ -115,11 +121,12 @@ class ColordragState extends State<Colordrag> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         foregroundColor: Colors.white,
-        backgroundColor: Colors.teal[700],
+        backgroundColor: Colors.pink[300],
         child: Icon(Icons.refresh),
         onPressed: () {
           setState(() {
             score.clear();
+
             seed++;
           });
         },
@@ -166,9 +173,12 @@ class ColordragState extends State<Colordrag> {
             dialogue(context);
           }
         });
-        // _audioCache.play("successful.mp3");
+
+        _audioCache.play("true.wav");
       },
-      onLeave: (data) {},
+      onLeave: (data) {
+        _audioCache.play("false.wav");
+      },
     );
   }
 }

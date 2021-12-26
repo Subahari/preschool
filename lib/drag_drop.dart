@@ -5,6 +5,9 @@ import 'childrens.dart';
 import 'colordrag.dart';
 import 'symbols.dart';
 import 'animal.dart';
+import 'dragcolour.dart';
+import 'dragnumber.dart';
+import 'dragfruits.dart';
 
 class drag extends StatelessWidget {
   @override
@@ -12,7 +15,7 @@ class drag extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: const Text('Drag & Drop Learn')),
-        backgroundColor: Colors.teal[700],
+        backgroundColor: Colors.pink[300],
         leading: BackButton(
           onPressed: () => Navigator.pushAndRemoveUntil(
               context,
@@ -66,7 +69,7 @@ class _dragsState extends State<drags> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/drag.jpg'),
+          image: AssetImage('assets/learn11.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -92,7 +95,7 @@ class _dragsState extends State<drags> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 20.0),
                       child: Text(
-                        "நிறங்கள்",
+                        "Colours",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -100,11 +103,13 @@ class _dragsState extends State<drags> {
                             color: Colors.brown),
                       ),
                     ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/color.jpg'),
-                    ),
+                    Expanded(
+                      child: Container(
+                        height: 80.0,
+                        width: 80.0,
+                        child: Image.asset('assets/color.jpg'),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(
@@ -139,7 +144,7 @@ class _dragsState extends State<drags> {
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Center(
                         child: Text(
-                          "ஆங்கில எழுத்துக்கள்",
+                          "Animals",
                           style: TextStyle(
                               fontSize: 15.0,
                               fontFamily: 'Comic',
@@ -173,7 +178,7 @@ class _dragsState extends State<drags> {
               //audioCache.play('click.mp3');
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Task()),
+                MaterialPageRoute(builder: (context) => Numberdrag()),
               );
             },
             child: Padding(
@@ -188,7 +193,7 @@ class _dragsState extends State<drags> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                        "எண்கள்",
+                        "Numbers",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -220,7 +225,7 @@ class _dragsState extends State<drags> {
             onTap: () {
               //audioCache.play('click.mp3');
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Task()));
+                  context, MaterialPageRoute(builder: (context) => Fruits()));
             },
             child: Padding(
               padding: EdgeInsets.all(23.0),
@@ -234,7 +239,7 @@ class _dragsState extends State<drags> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
                       child: Text(
-                        "பழங்கள்",
+                        "Fruits",
                         style: TextStyle(
                             fontSize: 15.0,
                             fontFamily: 'Comic',
@@ -296,6 +301,54 @@ class _dragsState extends State<drags> {
                       width: 80.0,
                       child: Image.asset('assets/abc.png'),
                     ),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(2, 1),
+                        blurRadius: 10.0,
+                      ),
+                    ]),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              // audioCache.play('click.mp3');
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Colourdrag()));
+            },
+            child: Padding(
+              padding: EdgeInsets.all(23.0),
+              child: Container(
+                width: 80.0,
+                height: 70.0,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20.0),
+                      child: Text(
+                        "Colours",
+                        style: TextStyle(
+                            fontSize: 15.0,
+                            fontFamily: 'Comic',
+                            fontWeight: FontWeight.w600,
+                            color: Colors.brown),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: 80.0,
+                        width: 80.0,
+                        child: Image.asset('assets/color.jpg'),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(

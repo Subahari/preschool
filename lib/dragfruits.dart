@@ -5,13 +5,13 @@ import 'dart:math';
 //import 'package:matchgame/itemModel.dart';
 import 'drag_drop.dart';
 
-class animal extends StatelessWidget {
+class Fruits extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text(' Animal Drag & Drop ')),
-        backgroundColor: Colors.teal[700],
+        title: Center(child: const Text(' Fruits Drag & Drop ')),
+        backgroundColor: Colors.pink[300],
       ),
       body: HomeScreen(),
     );
@@ -35,16 +35,30 @@ class _HomeScreenState extends State<HomeScreen> {
     //int seed = 0;
     score = 0;
     items = [
-      ItemModel(value: 'lion', name: 'Lion', img: 'assets/lion.png'),
-      ItemModel(value: 'panda', name: 'Panda', img: 'assets/panda.png'),
-      ItemModel(value: 'camel', name: 'Camel', img: 'assets/camel.png'),
-      ItemModel(value: 'dog', name: 'Dog', img: 'assets/dog.png'),
-      ItemModel(value: 'cat', name: 'Cat', img: 'assets/cat.png'),
-      ItemModel(value: 'horse', name: 'Horse', img: 'assets/horse.png'),
-      ItemModel(value: 'sheep', name: 'Sheep', img: 'assets/sheep.png'),
-      ItemModel(value: 'hen', name: 'Hen', img: 'assets/hen.png'),
-      ItemModel(value: 'fox', name: 'Fox', img: 'assets/fox.png'),
-      ItemModel(value: 'cow', name: 'Cow', img: 'assets/cow.png'),
+      ItemModel(
+          value: 'lion', name: 'Apple', img: 'assets/drag/fruits/redapple.png'),
+      ItemModel(
+          value: 'panda',
+          name: 'Banana',
+          img: 'assets/drag/fruits/bananas.png'),
+      ItemModel(
+          value: 'camel',
+          name: 'Blueberry',
+          img: 'assets/drag/fruits/blueberry.png'),
+      ItemModel(
+          value: 'dog', name: 'Grape', img: 'assets/drag/fruits/grape.png'),
+      ItemModel(
+          value: 'cat', name: 'Guava', img: 'assets/drag/fruits/guava.png'),
+      ItemModel(
+          value: 'horse', name: 'Mango', img: 'assets/drag/fruits/mango.png'),
+      //ItemModel(value: 'sheep', name: 'Sheep', img: 'assets/sheep.png'),
+      //ItemModel(value: 'hen', name: 'Hen', img: 'assets/hen.png'),
+      ItemModel(
+          value: 'fox', name: 'Orange', img: 'assets/drag/fruits/orange.png'),
+      ItemModel(
+          value: 'cow',
+          name: 'Strawberry',
+          img: 'assets/drag/fruits/strawberry.png'),
     ];
     items2 = List<ItemModel>.from(items);
 
@@ -221,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
   //Functions:
 
   String result() {
-    if (score == 100) {
+    if (score == 80) {
       player.play('success.wav');
       return 'Awesome!';
     } else {

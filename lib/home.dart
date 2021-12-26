@@ -113,7 +113,7 @@ class LandingPage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  color: Colors.teal[700],
+                  color: Colors.pink[300],
                   padding: EdgeInsets.symmetric(
                     horizontal: 30,
                     vertical: 10,
@@ -143,7 +143,7 @@ class LandingPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    color: Colors.teal[700],
+                    color: Colors.pink[300],
                     padding: EdgeInsets.symmetric(
                       horizontal: 30,
                       vertical: 10,

@@ -46,6 +46,11 @@ flutter:
     - assets/Colours/audio/
     - assets/Fruits/audio/
     - assets/number/audio/
+    - assets/drag/
+    - assets/drag/animals/
+    - assets/drag/colour/
+    - assets/drag/number/
+    - assets/drag/fruits/
     # - rs=w_1200,h_1200.jfif
     # - img1.png
     # - img2.jpg
