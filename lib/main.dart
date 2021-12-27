@@ -1,65 +1,25 @@
-import 'dart:async';
-import 'package:flutter/cupertino.dart';
+import 'package:preschool_learning_app/screens/login_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'home.dart';
-//import 'package:lottie/lottie.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Email And Password Login',
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
       debugShowCheckedModeBanner: false,
-      home: Splash(),
-    );
-  }
-}
-
-class Splash extends StatefulWidget {
-  @override
-  _SplashState createState() => _SplashState();
-}
-
-class _SplashState extends State<Splash> {
-  @override
-  void initState() {
-    super.initState();
-    Timer(
-        Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, new MaterialPageRoute(builder: (context) => Home())));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/home logo.jpg"),
-            // Text(
-            //   "PreSchool",
-            //   style: TextStyle(
-            //       fontSize: 35,
-            //       color: Colors.tealAccent,
-            //       fontWeight: FontWeight.bold,
-            //       fontFamily: "Pacifico"),
-            // ),
-            // Text("Learning",
-            //     style: TextStyle(
-            //         color: Colors.white,
-            //         fontSize: 20,
-            //         fontWeight: FontWeight.bold,
-            //         fontFamily: "Lobster"))
-          ],
-        ),
-      ), //center
+      home: LoginScreen(),
     );
   }
 }

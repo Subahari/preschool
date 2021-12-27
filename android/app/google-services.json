@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1033196012840",
+    "project_id": "project2-a632d",
+    "storage_bucket": "project2-a632d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033196012840:android:e9e0f2e63b1ee043f8fc1d",
+        "android_client_info": {
+          "package_name": "com.g12.doodle_learn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033196012840-02jridbm6rolds5ln2uivfa44bkueeu1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiPTV_jgrwJWn6PRI35z86IaY81W-ACRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1033196012840-02jridbm6rolds5ln2uivfa44bkueeu1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
