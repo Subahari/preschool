@@ -20,7 +20,7 @@ class _ChildrensState extends State<Childrens> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           bottom: TabBar(
@@ -38,7 +38,14 @@ class _ChildrensState extends State<Childrens> {
                 icon: Icon(Icons.task),
                 text: "Tasks",
               ),
-              Tab(icon: Icon(Icons.assessment_outlined), text: "Quiz"),
+              Tab(
+                icon: Icon(Icons.assessment_outlined),
+                text: "Quiz",
+              ),
+              Tab(
+                icon: Icon(Icons.task),
+                text: "Profile",
+              ),
             ],
           ),
           title: Text('Children'),
@@ -50,6 +57,7 @@ class _ChildrensState extends State<Childrens> {
             Learn(),
             Task(),
             Quiz(),
+            Profile(),
           ],
         ),
       ),
@@ -854,6 +862,162 @@ class _QuizState extends State<Quiz> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class Profile extends StatefulWidget {
+  @override
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  String localFilePath;
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Container(
+        color: Colors.white30,
+        child: Column(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(30.0),
+              height: 100,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  CircleAvatar(
+                    radius: 50.0,
+                    backgroundColor: Colors.blue,
+                    foregroundImage: AssetImage('assets/profile/avatar.png'),
+                    backgroundImage: AssetImage('assets/profile/down.png'),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 50.0),
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          'Name',
+                          style: TextStyle(
+                            fontFamily: 'FROSTY',
+                            fontSize: 40.0,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'My Aim',
+                          style: TextStyle(
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 20.0,
+                            color: Colors.red,
+                            letterSpacing: 2.5,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+              child: Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.only(left: 20.0),
+                      child: Text(
+                        'Points',
+                        style: TextStyle(
+                          color: Colors.yellow.shade900,
+                          wordSpacing: 20.0,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40.0,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 100.0,
+                    ),
+                    Container(
+                      child: Text(
+                        '?',
+                        style: TextStyle(
+                          color: Colors.yellow.shade900,
+                          wordSpacing: 20.0,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40.0,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(
+                  vertical: 15.0, horizontal: 15.0), // height: 100.0,
+              child: Padding(
+                padding: EdgeInsets.all(25.0),
+                child: Column(
+                  children: <Widget>[
+                    Center(
+                      child: Text(
+                        'Progress',
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          color: Colors.yellow.shade900,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+              child: Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Column(
+                  children: <Widget>[
+                    Center(
+                      child: Text(
+                        'Achivement',
+                        style: TextStyle(
+                          color: Colors.yellow.shade900,
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      child: ListTile(
+                        leading: ClipOval(
+                          child: Image.asset(
+                            'assets/profile/achive.jpg',
+                          ),
+                        ),
+                        title: Text(
+                          'There are no achivement',
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

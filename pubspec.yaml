@@ -38,6 +38,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/profile/
     - assets/alphabet/
     - assets/Fruits/ 
     - assets/number/
@@ -102,5 +103,17 @@ flutter:
     - family: ArimaMadurai-Black
       fonts:
         - asset: assets/ArimaMadurai-Black.ttf
+
+    - family: FROSTY
+      fonts:
+        - asset: assets/fonts/FROSTY__.TTF
+
+    - family: Rock3D
+      fonts:
+        - asset: assets/fonts/Rock3D-Regular.ttf
+        
+    - family: SourceSansPro
+      fonts:
+        - asset: assets/fonts/SourceSansPro-Regular.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
