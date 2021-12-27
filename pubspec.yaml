@@ -26,7 +26,8 @@ dependencies:
   just_audio: ^0.9.18
   math_expressions: ^2.2.0
   fluttertoast: ^8.0.8
- 
+  google_sign_in: ^5.2.1
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:

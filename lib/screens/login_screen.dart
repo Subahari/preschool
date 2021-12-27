@@ -132,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text("Don't have an account? "),
+                          Text("Don't have an account?? "),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
@@ -149,7 +149,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                   fontSize: 15),
                             ),
                           )
-                        ])
+                        ]),
+                    /*    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.amber,
+                            onPrimary: Colors.amberAccent,
+                            minimumSize: Size(double.infinity, 50)),
+                        child: Text("Signin with google"),
+                        onPressed: () async {})
+              */
                   ],
                 ),
               ),
