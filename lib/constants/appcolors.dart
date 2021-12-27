@@ -5,6 +5,8 @@ class AppColors {
   static const Color MAIN_COLOR = Color(0xFF8ce5f2);
   static const Color BUTTON_AUTH = Color(0xffd64161);
 
+  static const Color SPLASH = Color(0xf0544e50);
+
   // other colors
   static const Color DARK_GREEN = Color(0xFF1B6948);
   static const Color DARKER_GREEN = Color(0xFF0B452C);

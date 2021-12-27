@@ -1,6 +1,9 @@
 //import 'package:flutter/cupertino.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:preschool_learning_app/constants/appcolors.dart';
 import 'package:preschool_learning_app/constants/e_alphabet_lists.dart';
+import 'package:preschool_learning_app/screens/login_screen.dart';
 import 'home.dart';
 
 import 'package:audioplayers/audioplayers.dart';
@@ -11,47 +14,76 @@ import 'learnalphabets.dart';
 import 'draggable_advanced_page.dart';
 import 'classify_given_set.dart';
 
+class BottomNav {
+  final String title;
+  final IconData icon;
+  final Widget body;
+
+  BottomNav({this.title, this.icon, this.body});
+}
+
+final List<BottomNav> bottomNavItems = [
+  BottomNav(
+    title: 'Learn',
+    icon: Icons.book,
+    body: Learn(),
+  ),
+  BottomNav(
+    title: 'Task',
+    icon: Icons.task,
+    body: Task(),
+  ),
+  BottomNav(
+    title: 'Quiz',
+    icon: Icons.assignment,
+    body: Quiz(),
+  ),
+];
+
 class Childrens extends StatefulWidget {
   @override
   _ChildrensState createState() => _ChildrensState();
 }
 
 class _ChildrensState extends State<Childrens> {
+  // the logout function
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => LoginScreen()));
+  }
+
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          bottom: TabBar(
-            //indicatorColor: Colors.deepPurple,
-            // indicatorSize: TabBarIndicatorSize.label,
-            indicator: BoxDecoration(
-                borderRadius: BorderRadius.circular(50), // Creates border
-                color: Colors.pink),
-            tabs: [
-              Tab(
-                icon: Icon(Icons.book),
-                text: "Learn",
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text('Doodle'),
+        centerTitle: true,
+        backgroundColor: AppColors.BUTTON_AUTH,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () => logout(context),
+          )
+        ],
+      ),
+      body: bottomNavItems.elementAt(_currentIndex).body,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: AppColors.BUTTON_AUTH,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.blueGrey, //TODO: CHANGE COLOR
+        currentIndex: _currentIndex,
+        onTap: (val) => setState(() => _currentIndex = val),
+        items: bottomNavItems
+            .map(
+              (item) => BottomNavigationBarItem(
+                icon: Icon(item.icon),
+                label: item.title,
               ),
-              Tab(
-                icon: Icon(Icons.task),
-                text: "Tasks",
-              ),
-              Tab(icon: Icon(Icons.assessment_outlined), text: "Quiz"),
-            ],
-          ),
-          title: Text('Children'),
-          centerTitle: true,
-          backgroundColor: Colors.pink[300],
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            Learn(),
-            Task(),
-            Quiz(),
-          ],
-        ),
+            )
+            .toList(),
       ),
     );
   }

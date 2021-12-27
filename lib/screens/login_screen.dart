@@ -142,7 +142,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           RegistrationScreen()));
                             },
                             child: Text(
-                              "SignUp",
+                              "Sign Up",
                               style: TextStyle(
                                   color: Colors.redAccent,
                                   fontWeight: FontWeight.bold,
@@ -177,8 +177,10 @@ class _LoginScreenState extends State<LoginScreen> {
             // ignore: sdk_version_set_literal
             .then((uid) => {
                   Fluttertoast.showToast(msg: "Login Successful"),
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => Childrens())),
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => Childrens()),
+                      (route) => false),
                 });
       } on FirebaseAuthException catch (error) {
         switch (error.code) {
