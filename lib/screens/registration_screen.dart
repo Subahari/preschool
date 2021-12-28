@@ -176,7 +176,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             signUp(emailEditingController.text, passwordEditingController.text);
           },
           child: Text(
-            "SignUp",
+            "Sign Up",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
@@ -200,7 +200,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         child: SingleChildScrollView(
           child: Container(
             child: Padding(
-              padding: const EdgeInsets.all(25),
+              padding: const EdgeInsets.fromLTRB(25, 0, 25, 25),
               child: Form(
                 key: _formKey,
                 child: Column(

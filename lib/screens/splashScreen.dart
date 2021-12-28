@@ -23,7 +23,7 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Material(
         child: Container(
-            color: Colors.blue,
+            color: AppColors.SPLASH,
             alignment: Alignment.center,
             child: Stack(
               children: [

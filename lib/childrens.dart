@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:preschool_learning_app/constants/appcolors.dart';
@@ -5,9 +6,43 @@ import 'package:preschool_learning_app/lists/lesson.dart';
 import 'package:preschool_learning_app/screens/login_screen.dart';
 import 'package:preschool_learning_app/widgets/grid_card.dart';
 import 'drag_drop.dart';
+=======
+//import 'package:flutter/cupertino.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:preschool_learning_app/constants/appcolors.dart';
+import 'package:preschool_learning_app/constants/e_alphabet_lists.dart';
+import 'package:preschool_learning_app/screens/login_screen.dart';
+>>>>>>> 7a7fc7e69ea5fcbc1cc69e00ac4cc33e6154e3ed
 import 'home.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'draggable_advanced_page.dart';
+
+class BottomNav {
+  final String title;
+  final IconData icon;
+  final Widget body;
+
+  BottomNav({this.title, this.icon, this.body});
+}
+
+final List<BottomNav> bottomNavItems = [
+  BottomNav(
+    title: 'Learn',
+    icon: Icons.book,
+    body: Learn(),
+  ),
+  BottomNav(
+    title: 'Task',
+    icon: Icons.task,
+    body: Task(),
+  ),
+  BottomNav(
+    title: 'Quiz',
+    icon: Icons.assignment,
+    body: Quiz(),
+  ),
+];
 
 class BottomNav {
   final String title;
