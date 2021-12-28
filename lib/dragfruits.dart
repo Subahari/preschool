@@ -1,9 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'itemModel.dart';
-import 'dart:math';
-//import 'package:matchgame/itemModel.dart';
-import 'drag_drop.dart';
 
 class Fruits extends StatelessWidget {
   @override
@@ -51,8 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
           value: 'cat', name: 'Guava', img: 'assets/drag/fruits/guava.png'),
       ItemModel(
           value: 'horse', name: 'Mango', img: 'assets/drag/fruits/mango.png'),
-      //ItemModel(value: 'sheep', name: 'Sheep', img: 'assets/sheep.png'),
-      //ItemModel(value: 'hen', name: 'Hen', img: 'assets/hen.png'),
       ItemModel(
           value: 'fox', name: 'Orange', img: 'assets/drag/fruits/orange.png'),
       ItemModel(

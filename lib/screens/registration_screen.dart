@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:preschool_learning_app/constants/appcolors.dart';
-import 'package:preschool_learning_app/model/user_model.dart';
-import 'package:preschool_learning_app/screens/home_screen.dart';
+import 'package:preschool_learning_app/models/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';

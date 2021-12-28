@@ -1,15 +1,39 @@
-//import 'package:flutter/cupertino.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:preschool_learning_app/constants/e_alphabet_lists.dart';
-import 'home.dart';
-
-import 'package:audioplayers/audioplayers.dart';
+import 'package:preschool_learning_app/constants/appcolors.dart';
+import 'package:preschool_learning_app/lists/lesson.dart';
+import 'package:preschool_learning_app/screens/login_screen.dart';
+import 'package:preschool_learning_app/widgets/grid_card.dart';
 import 'drag_drop.dart';
-
-import 'learnalphabets.dart';
-
+import 'home.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'draggable_advanced_page.dart';
-import 'classify_given_set.dart';
+
+class BottomNav {
+  final String title;
+  final IconData icon;
+  final Widget body;
+
+  BottomNav({this.title, this.icon, this.body});
+}
+
+final List<BottomNav> bottomNavItems = [
+  BottomNav(
+    title: 'Learn',
+    icon: Icons.book,
+    body: Learn(),
+  ),
+  BottomNav(
+    title: 'Task',
+    icon: Icons.task,
+    body: Task(),
+  ),
+  BottomNav(
+    title: 'Quiz',
+    icon: Icons.assignment,
+    body: Quiz(),
+  ),
+];
 
 class Childrens extends StatefulWidget {
   @override
@@ -17,41 +41,44 @@ class Childrens extends StatefulWidget {
 }
 
 class _ChildrensState extends State<Childrens> {
+  // the logout function
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => LoginScreen()));
+  }
+
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          bottom: TabBar(
-            //indicatorColor: Colors.deepPurple,
-            // indicatorSize: TabBarIndicatorSize.label,
-            indicator: BoxDecoration(
-                borderRadius: BorderRadius.circular(50), // Creates border
-                color: Colors.pink),
-            tabs: [
-              Tab(
-                icon: Icon(Icons.book),
-                text: "Learn",
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text('Doodle'),
+        centerTitle: true,
+        backgroundColor: AppColors.BUTTON_AUTH,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () => logout(context),
+          )
+        ],
+      ),
+      body: bottomNavItems.elementAt(_currentIndex).body,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: AppColors.BUTTON_AUTH,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.blueGrey, //TODO: CHANGE COLOR
+        currentIndex: _currentIndex,
+        onTap: (val) => setState(() => _currentIndex = val),
+        items: bottomNavItems
+            .map(
+              (item) => BottomNavigationBarItem(
+                icon: Icon(item.icon),
+                label: item.title,
               ),
-              Tab(
-                icon: Icon(Icons.task),
-                text: "Tasks",
-              ),
-              Tab(icon: Icon(Icons.assessment_outlined), text: "Quiz"),
-            ],
-          ),
-          title: Text('Children'),
-          centerTitle: true,
-          backgroundColor: Colors.pink[300],
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            Learn(),
-            Task(),
-            Quiz(),
-          ],
-        ),
+            )
+            .toList(),
       ),
     );
   }
@@ -77,381 +104,18 @@ class _LearnState extends State<Learn> {
           fit: BoxFit.cover,
         ),
       ),
-      child:
-
-          /*  GridView.builder(
+      child: GridView.builder(
+        padding: const EdgeInsets.all(25.0),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
+          childAspectRatio: 0.96,
+          crossAxisSpacing: 25.0,
+          mainAxisSpacing: 25.0,
         ),
-        itemCount: list.length,
+        itemCount: lessons.length,
         itemBuilder: (BuildContext context, int index) {
-          final instant = list[index];
-
-          return  GestureDetector(
-            onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => learntamil(),),),
-            child: Padding(
-              padding: EdgeInsets.all(23.0),
-              child: Container(
-                width: 80.0,
-                height: 70.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        "${instant.title}",
-                        textAlign:TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontFamily: 'Comic',
-                            fontWeight: FontWeight.w600,
-                            color: Colors.brown),
-                      ),
-                    ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset(instant.image,errorBuilder: (_,__,___)=>Text('Image loading failed'),),
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(2, 1),
-                        blurRadius: 10.0,
-                      ),
-                    ]),
-              ),
-            ),
-          );
+          return GridCard(lesson: lessons[index]);
         },
-      ), */
-
-          GridView(
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        children: <Widget>[
-          GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => learnalphabet(
-                  title: 'TAMIL ALPHABETS',
-                  list: EAlphabetLists.TamilAlphabets,
-                ),
-              ),
-            ),
-            // onTap: () {
-            //   //audioCache.play('click.mp3');
-            //   Navigator.push(
-            //       context, MaterialPageRoute(builder: (context) => Home()));
-            // },
-            child: Padding(
-              padding: EdgeInsets.all(23.0),
-              child: Container(
-                width: 80.0,
-                height: 70.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        "Tamil Alphabets",
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontFamily: 'Comic',
-                            fontWeight: FontWeight.w600,
-                            color: Colors.brown),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 80.0,
-                        width: 80.0,
-                        child: Image.asset('assets/tamil.jpg'),
-                      ),
-                    )
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(2, 1),
-                        blurRadius: 10.0,
-                      ),
-                    ]),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => learnalphabet(
-                  title: 'ENGLISH ALPHABETS',
-                  list: EAlphabetLists.alphabets,
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(23.0),
-              child: Container(
-                width: 80.0,
-                height: 70.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Center(
-                        child: Text(
-                          "English Alphabets",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 15.0,
-                              fontFamily: 'Comic',
-                              fontWeight: FontWeight.w600,
-                              color: Colors.brown),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 80.0,
-                        width: 80.0,
-                        child: Image.asset('assets/abc.png'),
-                      ),
-                    )
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(2, 1),
-                        blurRadius: 10.0,
-                      ),
-                    ]),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              //audioCache.play('click.mp3');
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => learnalphabet(
-                          title: 'NUMBERS',
-                          list: EAlphabetLists.Numbers,
-                        )),
-              );
-            },
-            child: Padding(
-              padding: EdgeInsets.all(23.0),
-              child: Container(
-                width: 80.0,
-                height: 70.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        "Numbers",
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontFamily: 'Comic',
-                            fontWeight: FontWeight.w600,
-                            color: Colors.brown),
-                      ),
-                    ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/number.png'),
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(2, 1),
-                        blurRadius: 10.0,
-                      ),
-                    ]),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => learnalphabet(
-                  title: 'FRUITS',
-                  list: EAlphabetLists.fruits,
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(23.0),
-              child: Container(
-                width: 80.0,
-                height: 70.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        "Fruits",
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontFamily: 'Comic',
-                            fontWeight: FontWeight.w600,
-                            color: Colors.brown),
-                      ),
-                    ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/fruit.jpg'),
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(2, 1),
-                        blurRadius: 10.0,
-                      ),
-                    ]),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              // audioCache.play('click.mp3');
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => learnalphabet(
-                            title: 'COLORS',
-                            list: EAlphabetLists.Colors,
-                          )));
-            },
-            child: Padding(
-              padding: EdgeInsets.all(23.0),
-              child: Container(
-                width: 80.0,
-                height: 70.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        "Colors",
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontFamily: 'Comic',
-                            fontWeight: FontWeight.w600,
-                            color: Colors.brown),
-                      ),
-                    ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/color.jpg'),
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(2, 1),
-                        blurRadius: 10.0,
-                      ),
-                    ]),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              //audioCache.play('click.mp3');
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Home()),
-              );
-            },
-            child: Padding(
-              padding: EdgeInsets.all(23.0),
-              child: Container(
-                width: 80.0,
-                height: 80.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        "Poem/Rhymes",
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontFamily: 'Comic',
-                            fontWeight: FontWeight.w600,
-                            color: Colors.brown),
-                      ),
-                    ),
-                    Container(
-                      height: 80.0,
-                      width: 80.0,
-                      child: Image.asset('assets/poem.jpg'),
-                    ),
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(2, 1),
-                        blurRadius: 10.0,
-                      ),
-                    ]),
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }

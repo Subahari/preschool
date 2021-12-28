@@ -172,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void signIn(String email, String password) async {
     if (_formKey.currentState.validate()) {
       try {
-        await _auth
+        var set = await _auth
             .signInWithEmailAndPassword(email: email, password: password)
             // ignore: sdk_version_set_literal
             .then((uid) => {
