@@ -41,7 +41,7 @@ class Childrens extends StatefulWidget {
 }
 
 class _ChildrensState extends State<Childrens> {
-  // the logout function
+  //logout function
   Future<void> logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
     Navigator.of(context).pushReplacement(
